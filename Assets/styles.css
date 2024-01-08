@@ -1,0 +1,226 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,400;0,900;1,700&display=swap");
+
+/* Variables */
+:root {
+  --font-family: "Roboto", sans-serf;
+  --normal-font: 400;
+  --bold-font: 700;
+  --bolder-font: 900;
+  --bg-color: #1f2833;
+  --primary-color: #ebebeb;
+  --secondary-color: #66fcf1;
+  --primary-shadow: #8b8eaf;
+  --secondary-shadow: #a17a69;
+  --bottom-margin: 0.5rem;
+  --bottom-margin-2: 1rem;
+  --line-height: 1.7rem;
+  --transition: 0.3s;
+}
+/* Variables end */
+
+html {
+  scroll-behavior: smooth;
+}
+
+/* CSS Resets */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+ul {
+  list-style-type: none;
+}
+
+a {
+  text-decoration: none;
+  color: var(--primary-color);
+}
+
+a:hover {
+  color: var(--secondary-color);
+}
+
+body {
+  font-family: var(--font-family);
+}
+
+nav {
+    position: sticky;
+    top: 0;
+    left: 0;
+    z-index: 1;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1.5rem 3.5rem;
+    background-color: var(--bg-color);
+    box-shadow: 0 3px 5px rgba(0, 0, 0, 0);
+  }
+
+  nav h1 {
+    color: var(--primary-color);
+  }
+  
+  nav a {
+    color: var(--primary-color);
+    transition: var(--transition);
+  }
+  nav a:hover {
+    color: var(--secondary-color);
+    border-bottom: 2px solid var(--secondary-color);
+  }
+  
+  nav ul {
+    display: flex;
+    gap: 1.9rem;
+  }
+  
+  nav ul li {
+    font-weight: var(--bold-font);
+  }
+  body {
+    background-color: var(--bg-color);
+    margin: 0;
+    padding: 0;
+    font-family: var(--font-family);
+}
+
+  .home {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 2.5rem;
+    max-width: 68.75rem;
+    margin: auto;
+    color: var(--primary-color);
+    padding: 1rem;
+    text-align: center;
+  }
+
+  .bio {
+    width: 100%; /* Make the bio section full width for smaller screens */
+    max-width: 30rem; /* Limit the max width for larger screens */
+    padding: 0.625rem;
+
+  }
+  
+  .bio h1 {
+    margin-bottom: var(--bottom-margin);
+  }
+  
+  .bio p {
+    line-height: var(--line-height);
+    padding: 0.3rem 0;
+  }
+  .bio-text {
+    line-height: var(--line-height);
+    padding: 0.3rem 0;
+    margin-bottom: 1rem; /* Add margin to create space */
+    }
+
+  .secondary-color {
+    color: var(--secondary-color);
+  }
+  .say-hello-button {
+    background-color: var(--bg-color);
+    color: var(--primary-color);
+    padding: 0.5rem 1rem;
+    border-radius: 5px;
+    border: 2px solid var(--primary-color);
+    text-decoration: none;
+    font-weight: bold;
+    transition: var(--transition);
+}
+
+.say-hello-button:hover {
+    background-color: var(--secondary-color);
+    color: var(--bg-color);
+    border-color: var(--secondary-color);
+
+}
+
+  .more-about {
+    background-color: var(--bg-color);
+    color: var(--primary-color);
+    padding: 1rem 6rem;
+    display: flex; /* Use flexbox for layout */
+    justify-content: space-between; /* Align content to the start and end of the flex container */
+    align-items: center; /* Center items vertically within the flex container */
+}
+  .more-about img {
+    height: auto;
+    max-height: 250px;
+    max-width: 100%;
+    border-radius: 10px; 
+    flex-shrink: 0; 
+}
+  
+  .more-about h2 {
+    margin-bottom: var(--bottom-margin);
+    color: var(--secondary-color);
+    text-align: left;
+}
+
+  .more-about-content {
+    flex-grow: 1;
+    width: 100%; /* Make the content section full width for smaller screens */
+    max-width: 40rem; /* Limit the max width for larger screens */
+    margin-top: 1rem; /* Add some space at the top for smaller screens */
+}
+
+  
+  .more-about p {
+    line-height: var(--line-height);
+    padding: 0.4rem;
+  }
+  .experience {
+    background-color: var(--bg-color);
+    color: var(--primary-color);
+    padding: 1rem 6rem;
+    display: block; /* Change to block layout */
+}
+
+.experience h2 {
+    margin-bottom: var(--bottom-margin);
+    color: var(--secondary-color);
+    text-align: left;
+    padding-bottom: 10px;
+}
+
+  .tab-content {
+    display: none;
+    padding: 20px;
+    border: 1px solid var(--bg-color);
+    background-color: var(--bg-color);
+    color: var(--primary-color);
+}
+
+.tab-link {
+    background-color: var(--bg-color);
+    color: var(--primary-color);
+    padding: 10px 20px;
+    cursor: pointer;
+    display: inline-block;
+    border: 1px solid var(--bg-color);
+    border-bottom: none;
+    font-family: var(--font-family);
+    font-weight: var(--bold-font);
+    transition: var(--transition);
+}
+
+.tab-link:hover {
+    background-color: var(--secondary-color);
+    color: var(--bg-color);
+    border-color: var(--secondary-color);
+}
+
+.tab-link.active {
+    background-color: var(--primary-color);
+    color: var(--bg-color);
+    border-bottom: 1px solid var(--bg-color);
+}
+
+  

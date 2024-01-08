@@ -1,0 +1,131 @@
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+        <link rel="stylesheet" href="Assets/styles.css" />
+
+        <title> Hashem Abdelati </title>
+    </head>
+
+    <body>
+        <!-- Navbar -->
+
+        <nav>
+            <h1>HASHEM ABDELATI</h1>
+            <ul class="navigation">
+                <li><a href="#home" class="nav-link">Home</a></li>
+                <li><a href="#about" class="nav-link">About</a></li>
+                <li><a href="#experience" class="nav-link">Experience</a></li>
+                <li><a href="#projects" class="nav-link">Projects</a></li>
+            </ul>
+        </nav>
+
+        <section class="Home" id="home">
+            <div class="bio animate__animated animate__shakeX">
+                <h2 class="bio-title">Hi, I'm <span class="secondary-color">Hashem</span></h2>
+                <p class="bio-text">
+                I'm an aspiring software engineer from Amman, Jordan.
+                I'm intrested in cyber security, web and app development as well as 
+                game development. 
+              </p>
+              <p>
+              <a href="mailto:abdelati.hashem@gmail.com" class="say-hello-button">Say Hello!</a>
+              </p>
+            </div>
+      </section>
+      <section class="more-about" id="about">
+        <div class="more-about-content">
+            <h2>/ about me</h2>
+            <p>
+                I'm a sophomore studying at George Washington University.
+                I'm currently working as an Intern at LigaData.
+            </p>
+            <p>
+                Outside of work, I play a lot of video games, and I'm interested in the latest technological advancements.
+            </p>
+        </div>
+        <img
+            src="assets/Hashem2.jpeg"
+            alt="Hashem-Abdelati"
+            loading="lazy"
+            class="Home-img"
+        />
+    </section>
+
+    <section class="experience"  id="experience">
+        <div class="experience-content"> 
+            <h2>/ experience</h2>
+        </div>
+        <div class="experience-section">
+            <div class="tabs">
+                <button class="tab-link" onclick="openJob(event, 'Mawdoo3')">Mawdoo3</button>
+                <button class="tab-link" onclick="openJob(event, 'ZainJO')">Zain JO</button>
+            </div>
+        
+            <div id="Mawdoo3" class="tab-content">
+                <h3>Mawdoo3, Amman, Jordan</h3>
+                <p><strong>Summer Intern</strong> - May 2023 - July 2023</p>
+                Mawdoo3 is one of the leading Arabic-language online content platforms, known for providing a wide
+                range of informative and educational articles across various topics. Founded in 2010, Mawdoo3 has since
+                become a prominent resource for Arabic-speaking individuals seeking knowledge and information on a
+                plethora of subjects, including health, technology, science, and more.
+                My role involved pioneering the design and implementation 
+                of user-centric and aesthetically pleasing web interfaces, in close collaboration with the design and content teams. 
+                My technical expertise extends across front-end development, utilizing HTML, CSS, JavaScript, and various frameworks
+                to significantly enhance user experience. Additionally, I have honed my skills in backend technologies, including PHP, 
+                Python, and SQL. Working cohesively with a team of skilled developers, I have contributed significantly to the timely 
+                achievement of project goals and organizational objectives. This experience has deepened my appreciation for teamwork,
+                adaptability, and the necessity of continuous learning in the ever-evolving IT landscape.
+            </div>
+        
+            <div id="ZainJO" class="tab-content">
+                <h3>Zain JO, Amman, Jordan</h3>
+                <p><strong>Trainee</strong> - June 2022 - August 2022</p>
+                Zain JO, the Jordanian arm of the renowned telecommunications company Zain Group, is a leading
+                player in the region's digital transformation landscape. Zain Cash, a subsidiary of Zain JO, has
+                revolutionized the financial industry by offering innovative mobile banking and payment solutions.
+                My contributions were crucial in shaping its user interface and crafting user prompts, enhancing 
+                the overall user experience. My involvement extended to data analysis, where I extracted valuable 
+                insights to aid in organizational decision-making. Regular participation in meetings allowed me 
+                to offer IT and technical perspectives crucial to product development and marketing strategies.
+                 Additionally, I was instrumental in the quality control and branding alignment of Zain Cash Pro cards, 
+                 ensuring they met the company's high standards. My role at Zain JO was characterized by versatility, 
+                 as I adeptly navigated and contributed to multiple organizational facets, from IT to marketing, demonstrating
+                  a strong ability to balance diverse responsibilities.
+            </div>
+        </div>
+    </section>
+    
+    <section class="Projects"  id="projects">
+        
+
+
+
+    </section>
+
+    
+<script>
+    function openJob(evt, jobName) {
+    var i, tabcontent, tablinks;
+    
+    tabcontent = document.getElementsByClassName("tab-content");
+    for (i = 0; i < tabcontent.length; i++) {
+        tabcontent[i].style.display = "none";
+    }
+
+    tablinks = document.getElementsByClassName("tab-link");
+    for (i = 0; i < tablinks.length; i++) {
+        tablinks[i].className = tablinks[i].className.replace(" active", "");
+    }
+
+    document.getElementById(jobName).style.display = "block";
+    evt.currentTarget.className += " active";
+}
+
+// Set default open tab here (e.g., Mawdoo3)
+document.getElementsByClassName("tab-link")[0].click();
+</script>
+</body>
+</html>
