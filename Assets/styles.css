@@ -166,9 +166,17 @@ nav {
 
   .more-about-content {
     flex-grow: 1;
-    width: 100%; /* Make the content section full width for smaller screens */
-    max-width: 40rem; /* Limit the max width for larger screens */
-    margin-top: 1rem; /* Add some space at the top for smaller screens */
+    width: 100%; 
+    max-width: 40rem;
+    margin-top: 1rem; 
+}
+.more-about-content ul {
+  list-style-type: disc; 
+  padding-left: 20px; 
+}
+
+.more-about-content li {
+  color: var(--primary-color); 
 }
 
   
@@ -222,5 +230,70 @@ nav {
     color: var(--bg-color);
     border-bottom: 1px solid var(--bg-color);
 }
+
+.projects {
+  background-color: var(--bg-color);
+  color: var(--primary-color);
+  padding: 1rem 6rem;
+  display: block; /* Change to block layout */
+}
+
+.projects h2 {
+  margin-bottom: var(--bottom-margin);
+  color: var(--secondary-color);
+  text-align: left;
+  padding-bottom: 10px;
+}
+
+.project-pic {
+  max-width: 100%;
+  height: auto; 
+}
+
+.projects-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.4rem;
+}
+
+.projects-title {
+  text-align: center;
+  margin-bottom: 1rem;
+  margin-bottom: var(--bottom-margin);
+}
+.project-details {
+  margin-bottom: var(--bottom-margin);
+}
+
+.projects-carousel {
+  position: relative;
+  /* Other styles */
+}
+
+.carousel-nav {
+  background-color: transparent;
+  border: none; /* Remove borders or style as needed */
+  color: var(--primary-color); /* Arrow color */
+  cursor: pointer;
+  font-size: 24px; /* Adjust the size of the arrow */
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 10;
+}
+
+.carousel-nav:hover { 
+  color: var(--secondary-color); /* Arrow color on hover */
+}
+
+.left-arrow {
+  left: 10px;
+}
+
+.right-arrow {
+  right: 10px;
+}
+
 
   

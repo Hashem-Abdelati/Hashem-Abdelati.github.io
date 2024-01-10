@@ -43,6 +43,15 @@
                 I'm currently working as an Intern at LigaData.
             </p>
             <p>
+                Some technologies I like to work with:
+            </p>
+            <ul>
+                <li>Java</li>
+                <li>Python</li>
+                <li>C</li>
+                <li>HTML & CSS</li>
+            </ul>
+            <p>
                 Outside of work, I play a lot of video games, and I'm interested in the latest technological advancements.
             </p>
         </div>
@@ -99,10 +108,60 @@
     </section>
     
     <section class="Projects"  id="projects">
-        
-
-
-
+        <h2>/ projects</h2>
+        <div class="projects-carousel">
+            <button class="carousel-nav left-arrow">←</button> <!-- Left arrow -->
+            <div class="projects-container">
+            <div class="carousel-item">
+            <div class="project-container project-card">
+              <img
+                src="assets/Gwordle.png"
+                alt="GWordle-game"
+                loading="lazy"
+                class="project-pic"
+              />
+              <h3 class="project-title">GWordle</h3>
+              <p class="project-details">
+                GWordle is a game inspired for my love for the New York Times game Wordle except with a twist. The user spells words related to
+                The George Washington University.  
+              </p>
+              <a href="#" target="_blank" class="project-link">Check it Out</a>
+            </div>
+            </div>
+            <div class="carousel-item">
+            <div class="project-container project-card">
+              <img
+                src="assets/pong.png"
+                alt="pong-game"
+                loading="lazy"
+                class="project-pic"
+              />
+              <h3 class="project-title">Pong</h3>
+              <p class="project-details">
+                A simple pong game coded using python and turtle
+              </p>
+              <a href="#" target="_blank" class="project-link">Check it Out</a>
+            </div>
+            </div>
+            <div class="carousel-item">
+            <div class="project-container project-card">
+              <img
+                src="assets/images/greenyEarth.png"
+                alt="greeny-earth"
+                loading="lazy"
+                class="project-pic"
+              />
+              <h3 class="project-title">Natural Langauge Processing</h3>
+              <p class="project-details">
+                Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quas
+                ratione vel inventore labore commodi modi quos culpa aut saepe!
+                Alias!
+              </p>
+              <a href="#" target="_blank" class="project-link">Check it Out</a>
+            </div>
+            </div>
+            <button class="carousel-nav right-arrow">→</button> <!-- Right arrow -->
+        </div>
     </section>
 
     
@@ -126,6 +185,29 @@
 
 // Set default open tab here (e.g., Mawdoo3)
 document.getElementsByClassName("tab-link")[0].click();
+
+document.addEventListener('DOMContentLoaded', function() {
+    let currentProjectIndex = 0;
+    const projects = document.querySelectorAll('.carousel-item');
+    const totalProjects = projects.length;
+
+    function showProject(index) {
+        projects.forEach(project => project.style.display = 'none');
+        projects[index].style.display = 'block';
+    }
+
+    document.querySelector('.left-arrow').addEventListener('click', function() {
+        currentProjectIndex = (currentProjectIndex - 1 + totalProjects) % totalProjects;
+        showProject(currentProjectIndex);
+    });
+
+    document.querySelector('.right-arrow').addEventListener('click', function() {
+        currentProjectIndex = (currentProjectIndex + 1) % totalProjects;
+        showProject(currentProjectIndex);
+    });
+
+    showProject(currentProjectIndex); // Initialize the carousel
+});
 </script>
 </body>
 </html>
