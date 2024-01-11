@@ -246,8 +246,10 @@ nav {
 }
 
 .project-pic {
-  max-width: 100%;
-  height: auto; 
+  max-width: 50%; /* Adjust as needed */
+  height: auto;
+  display: block; /* To center the image */
+  margin: 0 auto; /* Add margin for auto alignment */
 }
 
 .projects-container {
@@ -257,13 +259,23 @@ nav {
   padding: 0.4rem;
 }
 
-.projects-title {
+.projects h3 {
   text-align: center;
   margin-bottom: 1rem;
   margin-bottom: var(--bottom-margin);
+  color: var(--secondary-color); /* Assign secondary color */
+  text-align: center; /* Center-align the title */
 }
 .project-details {
   margin-bottom: var(--bottom-margin);
+  text-align: center;
+}
+
+.project-link {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-weight: bold;
 }
 
 .projects-carousel {
@@ -273,13 +285,13 @@ nav {
 
 .carousel-nav {
   background-color: transparent;
-  border: none; /* Remove borders or style as needed */
-  color: var(--primary-color); /* Arrow color */
+  border: none;
+  color: var(--primary-color);
   cursor: pointer;
-  font-size: 24px; /* Adjust the size of the arrow */
+  font-size: 32px; /* Increase the size of the arrow */
   position: absolute;
   top: 50%;
-  transform: translateY(-50%);
+  transform: translateY(-50%) translateX(-50%); /* Center align arrow */
   z-index: 10;
 }
 
