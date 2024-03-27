@@ -245,67 +245,59 @@ nav {
   padding-bottom: 10px;
 }
 
-.project-pic {
-  max-width: 50%; /* Adjust as needed */
+
+.projects-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 20px;
+  padding: 20px;
+}
+
+.grid-item {
+  background-color: var(--primary-color);
+  color: var(--bg-color);
+  border-radius: 10px;
+  box-shadow: 0 2px 5px var(--primary-shadow);
+  overflow: hidden;
+  transition: var(--transition);
+}
+
+.grid-item:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 4px 10px var(--primary-shadow);
+}
+
+.grid-item img {
+  width: 100%;
   height: auto;
-  display: block; /* To center the image */
-  margin: 0 auto; /* Add margin for auto alignment */
+  object-fit: cover;
 }
 
-.projects-container {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding: 0.4rem;
+.project-pic {
+  max-height: 200px;
+  object-fit: cover;
 }
 
-.projects h3 {
-  text-align: center;
-  margin-bottom: 1rem;
-  margin-bottom: var(--bottom-margin);
-  color: var(--secondary-color); /* Assign secondary color */
-  text-align: center; /* Center-align the title */
-}
 .project-details {
-  margin-bottom: var(--bottom-margin);
-  text-align: center;
+  padding: 15px;
+  font-weight: var(--normal-font);
+  line-height: var(--line-height);
 }
 
 .project-link {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  font-weight: bold;
-}
-
-.projects-carousel {
-  position: relative;
-  /* Other styles */
-}
-
-.carousel-nav {
-  background-color: transparent;
-  border: none;
+  display: block;
+  text-align: center;
+  padding: 10px;
+  background-color: var(--bg-color);
   color: var(--primary-color);
-  cursor: pointer;
-  font-size: 32px; /* Increase the size of the arrow */
-  position: absolute;
-  top: 50%;
-  transform: translateY(-50%) translateX(-50%); /* Center align arrow */
-  z-index: 10;
+  text-decoration: none;
+  margin: 10px 15px;
+  border-radius: 5px;
+  font-weight: var(--bold-font);
+  transition: var(--transition);
 }
 
-.carousel-nav:hover { 
-  color: var(--secondary-color); /* Arrow color on hover */
+.project-link:hover {
+  background-color: var(--secondary-color);
+  color: var(--bg-color);
 }
-
-.left-arrow {
-  left: 10px;
-}
-
-.right-arrow {
-  right: 10px;
-}
-
-
-  
