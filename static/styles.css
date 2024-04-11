@@ -310,35 +310,46 @@ nav {
   color: var(--bg-color);
 }
 @media screen and (max-width: 768px) {
-  nav ul {
-    flex-direction: column;
-    align-items: center;
-  }
-
+  /* Adjustments for medium-sized screens like tablets */
   .more-about, .experience, .projects {
     padding: 1rem; /* Reduced padding for smaller screens */
   }
 
   .projects-grid {
-    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); /* Adjusted for very small screens */
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); /* Adjusted for smaller screens */
+  }
+
+  nav ul {
+    flex-direction: row; /* Keep nav items in a row */
+    flex-wrap: wrap; /* Allow nav items to wrap if there's not enough space */
+    justify-content: center; /* Center-align the nav items */
+    gap: 0.5rem; /* Reduce gap to save space */
+  }
+
+  nav a, nav h1 {
+    font-size: smaller; /* Reduce font size to fit smaller screens */
   }
 }
 
 @media screen and (max-width: 480px) {
+  /* Further adjustments for very small screens like smartphones */
   nav {
-    flex-direction: column;
-    padding: 1rem;
-  }
-
-  nav h1 {
-    margin-bottom: 1rem; /* Added space between title and nav items */
+    padding: 0.5rem; /* Reduce padding */
   }
 
   .bio, .more-about-content, .experience-content, .projects-content {
-    padding: 1rem; /* Reduced padding for very small screens */
+    padding: 1rem; /* Ensure consistent padding */
   }
 
   .more-about, .experience {
-    flex-direction: column; /* Stack vertically on very small screens */
+    flex-direction: column; /* Stack sections vertically for better readability */
+  }
+
+  nav ul {
+    justify-content: space-around; /* Distribute nav items evenly */
+  }
+
+  nav a, nav h1 {
+    font-size: smaller; /* Further reduce font size if necessary */
   }
 }
