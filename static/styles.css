@@ -88,6 +88,7 @@ nav {
     font-family: var(--font-family);
 }
 
+
   .home {
     display: flex;
     align-items: center;
@@ -169,6 +170,13 @@ nav {
     width: 100%; 
     max-width: 40rem;
     margin-top: 1rem; 
+}
+.more-about img {
+  height: auto;
+  max-height: 250px;
+  max-width: 100%;
+  border-radius: 10px; 
+  flex-shrink: 0; 
 }
 .more-about-content ul {
   list-style-type: disc; 
@@ -300,4 +308,37 @@ nav {
 .project-link:hover {
   background-color: var(--secondary-color);
   color: var(--bg-color);
+}
+@media screen and (max-width: 768px) {
+  nav ul {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .more-about, .experience, .projects {
+    padding: 1rem; /* Reduced padding for smaller screens */
+  }
+
+  .projects-grid {
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); /* Adjusted for very small screens */
+  }
+}
+
+@media screen and (max-width: 480px) {
+  nav {
+    flex-direction: column;
+    padding: 1rem;
+  }
+
+  nav h1 {
+    margin-bottom: 1rem; /* Added space between title and nav items */
+  }
+
+  .bio, .more-about-content, .experience-content, .projects-content {
+    padding: 1rem; /* Reduced padding for very small screens */
+  }
+
+  .more-about, .experience {
+    flex-direction: column; /* Stack vertically on very small screens */
+  }
 }
