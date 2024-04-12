@@ -89,6 +89,7 @@ nav {
 }
 
 
+
   .home {
     display: flex;
     align-items: center;
@@ -309,6 +310,14 @@ nav {
   background-color: var(--secondary-color);
   color: var(--bg-color);
 }
+
+.full-page {
+  max-width: 200px; /* or any other max width you prefer */
+  padding: 1000px;
+}
+
+
+
 @media screen and (max-width: 768px) {
   /* Adjustments for medium-sized screens like tablets */
   .more-about, .experience, .projects {
