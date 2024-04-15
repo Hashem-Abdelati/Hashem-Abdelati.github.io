@@ -22,7 +22,7 @@ html {
   scroll-behavior: smooth;
 }
 
-/* CSS Resets */
+
 * {
   margin: 0;
   padding: 0;
@@ -103,6 +103,7 @@ h1, h2 {
 
 p, li {
     font-weight: var(--normal-font);
+    font-size: 20px;
 }
 
 /* Header styles */
@@ -149,6 +150,8 @@ li {
 }
 h2 {
     color: var(--secondary-color);
+    padding-top: 20px;
+    padding-bottom: 20px;
 }
 /* Footer styles */
 footer {
