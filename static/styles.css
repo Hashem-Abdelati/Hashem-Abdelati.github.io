@@ -153,12 +153,28 @@ nav {
     justify-content: space-between; /* Align content to the start and end of the flex container */
     align-items: center; /* Center items vertically within the flex container */
 }
+
+.image-container {
+  display: flex;
+  flex-direction: column; /* Stack the image and caption vertically */
+  align-items: center; /* Center align these items */
+  max-height: 250px;
+  max-width: 100%;
+}
+
   .more-about img {
     height: auto;
     max-height: 250px;
     max-width: 100%;
     border-radius: 10px; 
     flex-shrink: 0; 
+}
+
+.more-about figcaption {
+  color: var(--primary-color); /* Use the primary color for the caption text */
+  font-size: 0.8rem; /* Make the caption text smaller */
+  text-align: center; /* Center-align the text */
+  margin-top: 0.5rem; /* Add space between the image and the caption */
 }
   
   .more-about h2 {
