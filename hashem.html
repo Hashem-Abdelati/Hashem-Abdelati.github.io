@@ -17,39 +17,55 @@
 
     <section id="more-about-me">
         <h2>More About Me</h2>
-        <p>
-            Hi there! I'm Hashem, and outside of my work, I have several hobbies that keep me inspired and energized. Here's a bit more about what I enjoy doing in my free time.
-        </p>
-        <!-- Camping Section -->
-        <section id="camping">
-            <h3>Camping Adventures</h3>
+        <div class="about-me-container">
             <p>
-                There's nothing quite like the great outdoors. I love camping and getting away from life. Whether it's hiking through the mountains or setting up camp by a lake, I’m always ready for the next adventure!
+                Hi there! I'm Hashem. I was born on the 16th of January 2004, and I'm going to tell you a bit about myself. First things first, speed facts: 
+                I'm a twin (me, my twin, and my little sister circa 2012), I'm from Amman, Jordan, and I really love Harry Potter. Outside of my work, I have several hobbies that keep me sane and grounded. Here's a bit more about what I enjoy doing in my free time.
             </p>
-            <div class="pictures">
-                <img src="static/images/camping.jpg" alt="Camping" />
-            </div>
-        </section>
+            <img src="static/siblings.jpg" alt="Me, my twin, and my little sister circa 2012">
+        </div>
+    </section>
+<!-- Camping Section -->
+<section id="camping">
+    <h2>Touching Grass</h2>
+    <p>
+        There's nothing quite like the great outdoors (though as a CS major I rarely get to see it). I love being outdoors and getting away from life. Whether it's hiking through the mountains or trekking through the desert, I’m always ready to breathe clean air!
+    </p>
+    <h3>My Adventures</h3>
+    <div class="image-gallery">
+        <div class="image-container">
+            <img src="static/mecamping.HEIC" alt="Camping" onclick="openLightbox(this)">
+        </div>
+        <div class="image-container">
+            <img src="static/meonmountin.HEIC" alt="On the mountain" onclick="openLightbox(this)">
+        </div>
+        <div class="image-container">
+            <img src="static/sunset.HEIC" alt="Sunset view" onclick="openLightbox(this)">
+        </div>
+        <div class="image-container">
+            <img src="static/yosemite.HEIC" alt="Yosemite" onclick="openLightbox(this)">
+        </div>
+        <div class="image-container">
+            <img src="static/yosemite2.HEIC" alt="Yosemite again" onclick="openLightbox(this)">
+        </div>
+    </div>
+
+    <!-- Lightbox Modal -->
+    <div id="lightbox" class="lightbox" onclick="closeLightbox()">
+        <span class="close">&times;</span>
+        <img id="lightbox-img">
+    </div>
+</section>
+
 
         <!-- Art Section -->
-        <section id="art">
-            <h3>Creating Art</h3>
+        <section id="cooking">
+            <h3>Cooking Good Food - as a picky eater</h3>
             <p>
-                Art has always been a creative outlet for me. I enjoy sketching, painting, and even experimenting with digital art. It’s a way for me to express myself and unwind.
+                Cooking has always been a rewarding experience for me. I love experimenting with new recipes, flavors, and techniques to create delicious meals. It’s a way for me to unwind, get creative, and share joy with others.
             </p>
             <div class="pictures">
-                <img src="static/images/art.jpg" alt="Art I Create" />
-            </div>
-        </section>
-
-        <!-- Video Games Section -->
-        <section id="gaming">
-            <h3>Video Games</h3>
-            <p>
-                I’m a big fan of video games, especially strategy games. There's nothing quite like solving puzzles, building strategies, or going on epic adventures, all from the comfort of my couch.
-            </p>
-            <div class="pictures">
-                <img src="static/images/gaming.jpg" alt="Playing Video Games" />
+                <img src="static/images/cooking.jpg" alt="Delicious Food I Cook" />
             </div>
         </section>
 
@@ -70,3 +86,15 @@
     </footer>
 </body>
 </html>
+
+<script>
+    function openLightbox(img) {
+        document.getElementById("lightbox").style.display = "flex";
+        document.getElementById("lightbox-img").src = img.src;
+    }
+    
+    function closeLightbox() {
+        document.getElementById("lightbox").style.display = "none";
+    }
+    </script>
+    

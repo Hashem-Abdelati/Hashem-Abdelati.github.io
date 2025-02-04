@@ -22,20 +22,22 @@
             </ul>
         </nav>
 <div class = full page>
-        <section class="Home" id="home">
-            <div class="bio animate__animated animate__shakeX">
-                <h2 class="bio-title">Hi, I'm <span class="secondary-color">Hashem</span></h2>
-                <p class="bio-text">
+    <section class="Home" id="home">
+        <div class="bio animate__animated animate__shakeX">
+            <h2 class="bio-title">
+                <span id="typed-text"></span><span id="typed-name" class="secondary-color"></span>
+            </h2>
+            <p class="bio-text">
                 I'm an aspiring software engineer from Amman, Jordan.
-                I'm intrested in cyber security, as well as web, app and 
+                I'm interested in cyber security, as well as web, app and 
                 game development. 
-              </p>
-              <p>
-              <a href="mailto:abdelati.hashem@gmail.com" class="say-hello-button">Say Hello!</a>
-              <a href="/static/Resume_Hashem_Abdelati.pdf" target="_blank" class="say-hello-button">My Resume</a>
             </p>
-            </div>
-      </section>
+            <p>
+                <a href="mailto:abdelati.hashem@gmail.com" class="say-hello-button">Say Hello!</a>
+                <a href="/static/Resume_Hashem_Abdelati2024.pdf" target="_blank" class="say-hello-button">My Resume</a>
+            </p>
+        </div>
+    </section>
       <section class="more-about" id="about">
         <div class="more-about-content">
             <h2>/ about me</h2>
@@ -68,6 +70,7 @@
         <div class="experience-content"> 
             <h2>/ experience</h2>
         </div>
+        <div class="container">
         <div class="experience-section">
             <div class="tabs">
                 <button class="tab-link" onclick="openJob(event, 'LigaData')">LigaData</button>
@@ -109,6 +112,7 @@
                 Conducted data analysis to derive key insights that informed product development and marketing strategies, contributing to decisions that will shape the financial landscape in the region.
                 Provided IT and technical perspectives in cross-functional meetings, playing a crucial role in aligning product features with user needs and business objectives.
             </div>
+        </div>
         </div>
     </section>
     
@@ -171,6 +175,30 @@
 document.getElementsByClassName("tab-link")[0].click();
 
 
+</script>
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+    const typedTextElement = document.getElementById("typed-text");
+    const typedNameElement = document.getElementById("typed-name");
+    const text = "Hi, I'm ";
+    const name = "Hashem";
+    let textIndex = 0;
+    let nameIndex = 0;
+
+    function typeText() {
+        if (textIndex < text.length) {
+            typedTextElement.textContent += text.charAt(textIndex);
+            textIndex++;
+            setTimeout(typeText, 150); // Adjust typing speed (150ms delay between letters)
+        } else if (nameIndex < name.length) {
+            typedNameElement.textContent += name.charAt(nameIndex);
+            nameIndex++;
+            setTimeout(typeText, 150); // Continue typing into the name span
+        }
+    }
+
+    typeText(); // Start typing the text
+});
 </script>
 </body>
 </html>

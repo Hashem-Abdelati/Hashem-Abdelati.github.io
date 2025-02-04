@@ -19,14 +19,19 @@
         <main>
             <section class="project-intro">
                 <div class="image-container">
-                    <img src="static/penguinuniversity.png" alt="Penguin University registration interface" class="project-image">
-                    <img src="static/penguinuniversity1.png" alt="Penguin University registration interface" class="project-image">
-                    <img src="static/penguinuniversity3.png" alt="Penguin University registration interface" class="project-image">
-                    <img src="static/penguinuniversity4.png" alt="Penguin University registration interface" class="project-image">
-
+                    <img src="static/penguinuniversity.png" alt="Penguin University registration interface" class="project-image" onclick="openLightbox(this)">
+                    <img src="static/penguinuniversity1.png" alt="Penguin University registration interface" class="project-image" onclick="openLightbox(this)">
+                    <img src="static/penguinuniversity3.png" alt="Penguin University registration interface" class="project-image" onclick="openLightbox(this)">
+                    <img src="static/penguinuniversity4.png" alt="Penguin University registration interface" class="project-image" onclick="openLightbox(this)">
                 </div>
                 <p>Developed collaboratively, the Penguin University registration system is designed to streamline the enrollment and course registration processes, utilizing cutting-edge technology to manage user (Faculty, Student, Administration) and course data efficiently.</p>
             </section>
+        
+            <!-- Lightbox Modal -->
+            <div id="lightbox" class="lightbox" onclick="closeLightbox()">
+                <span class="close">&times;</span>
+                <img id="lightbox-img">
+            </div>
         
             <section class="project-details">
                 <h2>/ project overview</h2>
@@ -69,3 +74,15 @@
         </footer>
     </body>
 </html>
+
+<script>
+    function openLightbox(img) {
+        document.getElementById("lightbox").style.display = "flex";
+        document.getElementById("lightbox-img").src = img.src;
+    }
+    
+    function closeLightbox() {
+        document.getElementById("lightbox").style.display = "none";
+    }
+    </script>
+    

@@ -379,3 +379,23 @@ nav {
     font-size: smaller; /* Further reduce font size if necessary */
   }
 }
+/* Typing animation */
+#typed-text::after{
+  display: inline-block;
+  margin-left: 5px;
+  opacity: 1;
+}
+#typed-name::after {
+    content: '|'; /* Cursor */
+    display: inline-block;
+    margin-left: 5px;
+    opacity: 1;
+    animation: blink-cursor 0.7s steps(1) infinite;
+}
+
+/* Blinking cursor */
+@keyframes blink-cursor {
+    50% {
+        opacity: 0;
+    }
+}
