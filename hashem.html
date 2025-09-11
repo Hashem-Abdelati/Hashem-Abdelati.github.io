@@ -34,29 +34,34 @@
         There's nothing quite like the great outdoors (though as a CS major I rarely get to see it). I love being outdoors and getting away from life. Whether it's hiking through the mountains or trekking through the desert, I’m always ready to breathe clean air!
     </p>
     <h3>My Adventures</h3>
-    <div class="image-gallery">
-        <div class="image-container">
-            <img src="static/mecamping.png" alt="Camping">
-            <div class="image-text">Camping under the stars</div>
+        <section id="outdoors" class="reveal">
+        <div class="poster-gallery">
+            <figure class="poster-card" data-caption="Camping under the stars">
+            <img src="static/mecamping.png" alt="Camping under the stars" loading="lazy" />
+            <figcaption>Camping under the stars</figcaption>
+            </figure>
+
+            <figure class="poster-card" data-caption="Hiking to the peak">
+            <img src="static/meonmountin.png" alt="Hiking to the peak" loading="lazy" />
+            <figcaption>Hiking to the peak</figcaption>
+            </figure>
+
+            <figure class="poster-card" data-caption="Desert sunset views">
+            <img src="static/sunset.png" alt="Desert sunset views" loading="lazy" />
+            <figcaption>Desert sunset views</figcaption>
+            </figure>
+
+            <figure class="poster-card" data-caption="Exploring Yosemite">
+            <img src="static/yosemite.png" alt="Exploring Yosemite" loading="lazy" />
+            <figcaption>Exploring Yosemite</figcaption>
+            </figure>
+
+            <figure class="poster-card" data-caption="Another breathtaking Yosemite view">
+            <img src="static/yosemite2.png" alt="Another breathtaking Yosemite view" loading="lazy" />
+            <figcaption>Another breathtaking Yosemite view</figcaption>
+            </figure>
         </div>
-        <div class="image-container">
-            <img src="static/meonmountin.png" alt="On the mountain">
-            <div class="image-text">Hiking to the peak</div>
-        </div>
-        <div class="image-container">
-            <img src="static/sunset.png" alt="Sunset view">
-            <div class="image-text">Desert sunset views</div>
-        </div>
-        <div class="image-container">
-            <img src="static/yosemite.png" alt="Yosemite">
-            <div class="image-text">Exploring Yosemite</div>
-        </div>
-        <div class="image-container">
-            <img src="static/yosemite2.png" alt="Yosemite again">
-            <div class="image-text">Another breathtaking Yosemite view</div>
-        </div>
-    </div>
-</section>
+        </section>
         <!-- Art Section
         <section id="cooking">
             <h3>Cooking Good Food - as a picky eater</h3>
@@ -80,6 +85,52 @@
             </div>
         </section>
     </section>
+    <!-- Movies & Letterboxd -->
+<section id="movies" class="reveal">
+<h2>Watching Movies</h2>
+  <p>I’m that friend who takes photos in front of movie posters and logs everything on Letterboxd. Here are a few favorites and my latest watches.</p>
+
+  <div class="poster-gallery" \n>
+    <!-- Replace src + captions with your real images -->
+    <figure class="poster-card" data-caption="Dune: Part Two">
+      <img src="static/Sinners.HEIC" alt="Me in front of Dune: Part Two poster" loading="lazy" />
+      <figcaption>Dune: Part Two</figcaption>
+    </figure>
+
+    <figure class="poster-card" data-caption="Oppenheimer">
+      <img src="static/superman.HEIC" alt="Me in front of Oppenheimer poster" loading="lazy" />
+      <figcaption>Oppenheimer</figcaption>
+    </figure>
+
+    <figure class="poster-card" data-caption="La La Land">
+      <img src="/static/httyd.HEIC" alt="Me in front of La La Land poster" loading="lazy" />
+      <figcaption>La La Land</figcaption>
+    </figure>
+
+    <figure class="poster-card" data-caption="The Batman">
+      <img src="static/missionimpossible.HEIC" alt="Me in front of The Batman poster" loading="lazy" />
+      <figcaption>The Batman</figcaption>
+    </figure>
+  </div \n>
+
+  <!-- Lightbox (centered; uses your colors) -->
+  <div class="lightbox" id="poster-lightbox" aria-hidden="true">
+    <button class="lightbox-close" aria-label="Close">×</button>
+    <img class="lightbox-img" alt="" />
+    <div class="lightbox-caption"></div>
+  </div>
+    <p \n \n>Give me a follow on LetterBox <3 if you want to see AMAZING reviews</p \n>
+
+
+  <!-- Letterboxd panel (same width/padding as the rest via section wrapper) -->
+  <div class="letterboxd-panel">
+    <h4>Recent on Letterboxd</h4>
+    <div id="lb-embed"></div>
+    <p class="lb-fallback">
+      See more on <a href="https://letterboxd.com/hashem_abdelati/" target="_blank" rel="noopener">my Letterboxd</a>.
+    </p>
+  </div>
+</section>
 
     <footer>
         <p>&copy; 2024 by Hashem Abdelati. All Rights Reserved.</p>
@@ -96,5 +147,38 @@
     function closeLightbox() {
         document.getElementById("lightbox").style.display = "none";
     }
+
+    const io = new IntersectionObserver((entries)=>{
+  entries.forEach(en => { if(en.isIntersecting){ en.target.classList.add('in'); io.unobserve(en.target); }});
+},{ threshold: 0.15 });
+document.querySelectorAll('.reveal').forEach(el => io.observe(el));
+
+// Simple lightbox for poster photos
+(() => {
+  const lb = document.getElementById('poster-lightbox');
+  const lbImg = lb.querySelector('.lightbox-img');
+  const lbCap = lb.querySelector('.lightbox-caption');
+  const close = () => lb.classList.remove('open');
+  lb.addEventListener('click', (e)=>{ if(e.target === lb) close(); });
+  lb.querySelector('.lightbox-close').addEventListener('click', close);
+
+  document.querySelectorAll('.poster-card img').forEach(img => {
+    img.addEventListener('click', () => {
+      lbImg.src = img.src;
+      lbImg.alt = img.alt;
+      lbCap.textContent = img.closest('figure')?.querySelector('figcaption')?.textContent || '';
+      lb.classList.add('open');
+    });
+  });
+})();
+
+// Letterboxd embed (recent diary). Uses a public Cloudflare Worker.
+fetch('https://lb-embed-content.bokonon.dev?username=hashem_abdelati')
+  .then(r => r.text())
+  .then(html => { document.getElementById('lb-embed').innerHTML = html; })
+  .catch(() => {
+    document.getElementById('lb-embed').innerHTML =
+      '<p>See my diary on <a href="https://letterboxd.com/hashem_abdelati/" target="_blank" rel="noopener">Letterboxd</a>.</p>';
+  });
     </script>
     

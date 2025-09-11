@@ -13,12 +13,13 @@
         <!-- Navbar -->
 
         <nav>
-            <h1>HASHEM ABDELATI</h1>
-            <ul class="navigation">
+            <h1>HASHEM ABDELATI</h1> 
+            <ul class="navigation"> 
                 <li><a href="#home" class="nav-link">Home</a></li>
                 <li><a href="#about" class="nav-link">About</a></li>
                 <li><a href="#experience" class="nav-link">Experience</a></li>
                 <li><a href="#projects" class="nav-link">Projects</a></li>
+
             </ul>
         </nav>
 <div class = full page>
@@ -34,7 +35,7 @@
             </p>
             <p>
                 <a href="mailto:abdelati.hashem@gmail.com" class="say-hello-button">Say Hello!</a>
-                <a href="/static/Resume_Hashem_Abdelati2024.pdf" target="_blank" class="say-hello-button">My Resume</a>
+                <a href="/static/Resume_Hashem_Abdelati_2025.pdf" target="_blank" class="say-hello-button">My Resume</a>
             </p>
         </div>
     </section>
@@ -42,15 +43,15 @@
         <div class="more-about-content">
             <h2>/ about me</h2>
             <p>
-                I'm a junior studying at George Washington University.
-                I'm currently working as an Intern at LigaData.
+                I'm a Senior studying at George Washington University. 
+                I'm currently searching for a Job. 
             </p>
             <p>
                 Some technologies I like to work with:
             </p>
             <ul>
                 <li>Java</li>
-                <li>Python</li>
+                <li>Python</li> 
                 <li>C</li>
                 <li>HTML & CSS</li>
                 <li>SQL</li>
@@ -62,21 +63,36 @@
         <div class="image-container">
             <img src="static/Hashem2.jpeg" alt="Hashem-Abdelati" loading="lazy">
             <figcaption>Fig.1 - Me in Costa Rica 2023</figcaption>
-        </div>
+        </div> 
 
     </section>
 
     <section class="experience"  id="experience">
-        <div class="experience-content"> 
+        <div class="experience-content">  
             <h2>/ experience</h2>
         </div>
         <div class="container">
         <div class="experience-section">
             <div class="tabs">
+                <button class="tab-link" onclick="openJob(event, 'ZainJO')">Zain JO</button>
                 <button class="tab-link" onclick="openJob(event, 'LigaData')">LigaData</button>
                 <button class="tab-link" onclick="openJob(event, 'Mawdoo3')">Mawdoo3</button>
-                <button class="tab-link" onclick="openJob(event, 'ZainJO')">Zain JO</button>
 
+            </div>
+
+            <div id="ZainJO" class="tab-content">
+                <a href="https://www.zain.com/en"><h3>Zain JO, Amman, Jordan</h3></a>
+                <p><strong>Software Engineering Intern</strong> - May 2025 - August 2025</p>
+                Zain JO, the Jordanian arm of the renowned telecommunications company Zain Group, is a leading
+                player in the region's digital transformation landscape. At Zain JO I helped build an AI-powered c
+                all-center assistant that answers agent and customer queries in English and Arabic by grounding 
+                responses in hundreds of internal SOPs and support docs. I implemented semantic search using O
+                penAI embeddings with a Pinecone vector store and orchestrated a multilingual retrieval pipeline 
+                in Python (LangChain). Work included cleaning and normalizing English/Arabic documents, 
+                chunking with metadata (department/product/version), and wiring a top-k retriever so the 
+                chatbot could cite the right passages instantly. I also set up incremental indexing 
+                to keep the corpus in sync as documents changed and added filters to prevent 
+                outdated content from surfacing.
             </div>
 
             <div id="LigaData" class="tab-content">
@@ -99,19 +115,6 @@
                 Collaborated with a talented team of developers to meet project deadlines and achieve organizational goals, ensuring a seamless user experience for a site that reaches 1 in 3 internet users in the Arab world.
                 Played a key role in developing the login website, focusing on crafting the HTML structure and refining the CSS to ensure a responsive, visually appealing, and user-friendly interface, enhancing the platform's accessibility for millions of daily users across multiple devices.
             </div>
-        
-            <div id="ZainJO" class="tab-content">
-                <a href="https://www.zain.com/en"><h3>Zain JO, Amman, Jordan</h3></a>
-                <p><strong>Software Engineering Intern</strong> - May 2022 - August 2022</p>
-                Zain JO, the Jordanian arm of the renowned telecommunications company Zain Group, is a leading
-                player in the region's digital transformation landscape. Zain Cash, a subsidiary of Zain JO, has
-                revolutionized the financial industry by offering innovative mobile banking and payment solutions.
-                My contributions were crucial in shaping its user interface and crafting user prompts, enhancing 
-                the overall user experience. I collaborated with the Zain Cash team in the development of the new Zain Cash mobile app, which is poised to serve millions of users across Jordan and the broader region, revolutionizing online banking for a significant portion of Zain's customer base.
-                I contributed to the app's user interface and wrote user prompts, ensuring a seamless and intuitive user experience for an audience projected to include hundreds of thousands of daily users.
-                Conducted data analysis to derive key insights that informed product development and marketing strategies, contributing to decisions that will shape the financial landscape in the region.
-                Provided IT and technical perspectives in cross-functional meetings, playing a crucial role in aligning product features with user needs and business objectives.
-            </div>
         </div>
         </div>
     </section>
@@ -119,6 +122,13 @@
     <section class="Projects" id="projects">
         <h2>/ projects</h2>
         <div class="projects-grid">
+            <!-- Project: Zain JO Chatbot -->
+            <div class="grid-item">
+                <img src="static/zainjo-chatbot.png" alt="Zain JO AI Call-Center Chatbot" class="project-pic"/>
+                <h3>Zain JO — AI Call-Center Chatbot</h3>
+                <p>Designed and shipped a multilingual (English & Arabic) AI call-center chatbot for Zain Jordan using OpenAI embeddings, Pinecone, and LangChain—preprocessing and indexing hundreds of internal SOPs to deliver instant, grounded answers from support documents.</p>
+                <a href="ZainJO-Chatbot.html" class="project-link">Check it Out</a>
+            </div>
             <!-- Project 1 -->
             <div class="grid-item">
                 <img src="static/Gwordle.png" alt="GWordle-game" class="project-pic"/>

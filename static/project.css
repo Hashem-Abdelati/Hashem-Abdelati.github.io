@@ -236,6 +236,156 @@ footer {
   object-fit: cover;
 }
 
+#movies .poster-gallery{
+  --poster-w: 180px;   /* match your existing uniform size */
+  --poster-h: 250px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(var(--poster-w), 1fr));
+  gap: 15px;           /* matches your .image-gallery gap */
+  justify-items: center;
+}
+
+/* Poster card with glass + tilt + shine */
+#movies .poster-card{
+  --tiltX: 0deg; --tiltY: 0deg; --tiltScale: 1;
+  position: relative;
+  width: var(--poster-w);
+  border-radius: 16px;
+  overflow: hidden;
+  background: rgba(255,255,255,0.04);
+  border: 1px solid rgba(255,255,255,0.10);
+  backdrop-filter: saturate(140%) blur(6px);
+  transform: perspective(700px) rotateX(var(--tiltX)) rotateY(var(--tiltY)) scale(var(--tiltScale));
+  transition: transform .25s ease, box-shadow .25s ease, border-color .25s ease;
+  box-shadow: 0 8px 24px rgba(0,0,0,0.25);
+}
+#movies .poster-card:hover{
+  --tiltScale: 1.02;
+  border-color: rgba(255,255,255,0.18);
+  box-shadow: 0 12px 36px rgba(0,0,0,0.35);
+}
+
+/* Glow */
+#movies .poster-card::before{
+  content:"";
+  position:absolute; inset:-2px;
+  background: linear-gradient(120deg,#ed8c3233,#ffffff22,#8b8eaf33);
+  filter: blur(10px);
+  opacity: 0; transition: opacity .25s ease; z-index: 0;
+}
+#movies .poster-card:hover::before{ opacity: 1; }
+
+/* Shine highlight following the cursor */
+#movies .poster-card::after{
+  content:""; position:absolute; inset:-40%;
+  background: radial-gradient(120px 80px at var(--mx,50%) var(--my,0%), rgba(255,255,255,0.12), transparent 60%);
+  pointer-events:none; z-index: 1; opacity: 0; transition: opacity .2s ease;
+}
+#movies .poster-card:hover::after{ opacity: 1; }
+
+/* Image + caption */
+#movies .poster-card img{
+  display:block; width:100%; height: var(--poster-h);
+  object-fit: cover;
+}
+#movies .poster-card figcaption{
+  font-size: .9rem; padding: 8px 10px 10px;
+  color: var(--primary-color); opacity:.85;
+}
+
+/* Lightbox (uses your theme colors) */
+.lightbox{
+  position: fixed; inset: 0; display: none; align-items: center; justify-content: center;
+  background: rgba(0,0,0,0.85); z-index: 1000; padding: 24px;
+}
+.lightbox.open{ display:flex; }
+.lightbox-img{ max-width: min(92vw, 1100px); max-height: 80vh; border-radius: 10px; }
+.lightbox-caption{ margin-top: 10px; text-align: center; opacity: .85; color: var(--primary-color); }
+.lightbox-close{
+  position: absolute; top: 16px; right: 16px; width: 40px; height: 40px;
+  border: 0; border-radius: 999px; font-size: 22px; cursor: pointer;
+  background: rgba(255,255,255,0.10); color: var(--primary-color);
+}
+
+#outdoors .poster-gallery{
+  --poster-w: 180px;   /* same dimensions as your other images */
+  --poster-h: 250px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(var(--poster-w), 1fr));
+  gap: 15px;
+  justify-items: center;
+}
+
+/* Poster card: glass, tilt, glow */
+#outdoors .poster-card{
+  --tiltX: 0deg; --tiltY: 0deg; --tiltScale: 1;
+  position: relative; width: var(--poster-w);
+  border-radius: 16px; overflow: hidden;
+  background: rgba(255,255,255,0.04);
+  border: 1px solid rgba(255,255,255,0.10);
+  backdrop-filter: saturate(140%) blur(6px);
+  transform: perspective(700px) rotateX(var(--tiltX)) rotateY(var(--tiltY)) scale(var(--tiltScale));
+  transition: transform .25s ease, box-shadow .25s ease, border-color .25s ease;
+  box-shadow: 0 8px 24px rgba(0,0,0,0.25);
+}
+#outdoors .poster-card:hover{
+  --tiltScale: 1.02;
+  border-color: rgba(255,255,255,0.18);
+  box-shadow: 0 12px 36px rgba(0,0,0,0.35);
+}
+
+/* Glow + shine */
+#outdoors .poster-card::before{
+  content:""; position:absolute; inset:-2px;
+  background: linear-gradient(120deg,#ed8c3233,#ffffff22,#8b8eaf33);
+  filter: blur(10px); opacity: 0; transition: opacity .25s ease; z-index: 0;
+}
+#outdoors .poster-card:hover::before{ opacity: 1; }
+
+#outdoors .poster-card::after{
+  content:""; position:absolute; inset:-40%;
+  background: radial-gradient(120px 80px at var(--mx,50%) var(--my,0%), rgba(255,255,255,0.12), transparent 60%);
+  pointer-events:none; z-index: 1; opacity: 0; transition: opacity .2s ease;
+}
+#outdoors .poster-card:hover::after{ opacity: 1; }
+
+/* Image + caption */
+#outdoors .poster-card img{
+  display:block; width:100%; height: var(--poster-h); object-fit: cover;
+}
+#outdoors .poster-card figcaption{
+  font-size: .9rem; padding: 8px 10px 10px;
+  color: var(--primary-color); opacity:.85;
+}
+
+/* Respect reduced motion */
+@media (prefers-reduced-motion: reduce){
+  #movies .poster-card{ transition: none !important; transform: none !important; }
+}
+
+/* Optional: reveal animation consistent with your site */
+.reveal { opacity: 0; transform: translateY(18px); transition: opacity .6s ease, transform .6s ease; }
+.reveal.in { opacity: 1; transform: translateY(0); }
+
+/* Tighten the gallery gap to match your spacing scale */
+#movies .image-gallery { gap: 15px; }
+
+/* Letterboxd panel */
+.letterboxd-panel {
+  margin-top: 28px;
+  padding: 16px;
+  border-radius: 16px;
+  background: rgba(21, 22, 24, 0.759);
+  border: 1px solid rgba(255,255,255,0.08);
+}
+.letterboxd-panel h4 { margin: 0 0 10px; }
+#lb-embed { overflow: hidden; }
+#lb-embed a { text-decoration: none; }
+
+/* Optional: match your reveal/tilt utilities if you use them elsewhere */
+.reveal { opacity: 0; transform: translateY(18px); transition: opacity .6s, transform .6s; }
+.reveal.in { opacity: 1; transform: translateY(0); }
+
 /* Responsive Design */
 @media (max-width: 768px) {
     .image-container {
